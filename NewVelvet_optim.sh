@@ -43,10 +43,11 @@ sam=(`ls -1 *.sam_unmapped`)
 CMD="VelvetOptimiser.pl -s 51 -e 75 -f '-sam ${sam[$i]}' -o '-min_contig_lgth 500 -unused_reads yes' -p ${sam[$i]}"
 echo $CMD
 
-# $CMD #No recommended
+echo -n "Running on: "
+hostname
+
+echo "SGE job id: $JOB_ID"
 
 eval $CMD
 
-
- 
 echo "  Finished at:           " `date` 
